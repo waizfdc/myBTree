@@ -1,5 +1,28 @@
 #include "mydb.h"
+#include <unistd.h>
 
+int DB_btree_close(struct DB *db) {
+	return 0;
+}
+
+int DB_btree_del(const struct DB *db, const struct DBT *key) {
+	return 0;
+}
+
+int DB_btree_get(const struct DB *db, const struct DBT *key, struct DBT *data) {
+	
+}
+
+int DB_btree_put(const struct DB *db, const struct DBT *key, const struct DBT *data) {
+
+}
+
+struct DB DB_btree = {
+	DB_btree_close,
+	DB_btree_del,
+	DB_btree_get,
+	DB_btree_put
+};
 
 int db_close(struct DB *db) {
 	db->close(db);
@@ -37,8 +60,3 @@ int db_put(const struct DB *db, void *key, size_t key_len, void *val, size_t val
 	return db->put(db, &keyt, &valt);
 }
 
-int get(const struct DB *db, const struct DBT *key, struct DBT *data) {
-	int i =1;
-
-	return 0;
-}
